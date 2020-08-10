@@ -8,8 +8,10 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import MenuOutlinedIcon from '@material-ui/icons/MenuOutlined';
 import Logo from '../Assets/Logo/HeaderLogo.svg'
+
 import Button from '@material-ui/core/Button'
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import Translate from "./Translate";
 
 const useStyles = makeStyles((theme) => ({
     container:{
@@ -18,7 +20,10 @@ const useStyles = makeStyles((theme) => ({
         boxShadow:'0px 0px',
         paddingLeft:40,
         paddingRight: 20,
-
+        [theme.breakpoints.down('md')]: {
+            padding:0,
+            paddingLeft: 20,
+        },
     },
     grow: {
         flexGrow: 1,
@@ -62,6 +67,9 @@ const useStyles = makeStyles((theme) => ({
             display: 'none',
         },
     },
+    menuItem:{
+        padding:0,marginBottom:10
+    },
 }));
 
 export default function PrimarySearchAppBar() {
@@ -84,24 +92,25 @@ export default function PrimarySearchAppBar() {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-            <MenuItem>
-                <Button className={classes.button}>How It works</Button>
+            <MenuItem onClick={handleMobileMenuClose} className={classes.menuItem}>
+                <a href="#howitwork" style={{width:'100%',textDecoration:'none'}}><Button className={classes.button} fullWidth>How it work</Button></a>
             </MenuItem>
-            <MenuItem>
-                <Button className={classes.button}>FAQ</Button>
+            <MenuItem onClick={handleMobileMenuClose} className={classes.menuItem}>
+               <a href="#faq" style={{width:'100%',textDecoration:'none'}}> <Button className={classes.button} fullWidth>FAQ</Button></a>
             </MenuItem>
-            <MenuItem>
-                <Button className={classes.button}>
-                    EN
-                    <ArrowDropDownIcon />
-                </Button>
+            <MenuItem className={classes.menuItem} onClick={handleMobileMenuClose} style={{paddingLeft:10}}>
+                {/*<Button className={classes.button} style={{margin:'auto'}} fullWidth>*/}
+                {/*    EN*/}
+                {/*    <ArrowDropDownIcon />*/}
+                {/*</Button>*/}
+                <Translate />
             </MenuItem>
 
             <MenuItem>
-                <Button className={classes.signButton} variant={"contained"}>SIGN IN</Button>
+                <Button className={classes.signButton} variant={"contained"} fullWidth>SIGN IN</Button>
             </MenuItem>
             <MenuItem>
-                <Button className={classes.signButton} variant={"contained"}>SIGN UP</Button>
+                <Button className={classes.signButton} variant={"contained"} fullWidth>SIGN UP</Button>
             </MenuItem>
         </Menu>
     );
@@ -113,12 +122,13 @@ export default function PrimarySearchAppBar() {
                     <img src={Logo} alt="React Logo" className={classes.logo}/>
                     <div className={classes.grow} />
                     <div className={classes.sectionDesktop}>
-                        <Button className={classes.button}>How It works</Button>
-                        <Button className={classes.button}>FAQ</Button>
-                        <Button className={classes.button}>
-                            EN
-                            <ArrowDropDownIcon />
-                        </Button>
+                        <a href="#faq" style={{textDecoration:'none'}}><Button className={classes.button}>How It works</Button></a>
+                        <a href="#faq" style={{textDecoration:'none'}}><Button className={classes.button}>FAQ</Button></a>
+                        {/*<Button className={classes.button}>*/}
+                        {/*    EN*/}
+                        {/*    <ArrowDropDownIcon />*/}
+                        {/*</Button>*/}
+                        <Translate />
                         <Button className={classes.signButton} variant={"contained"}>SIGN IN</Button>
                         <Button className={classes.signButton} variant={"contained"}>SIGN UP</Button>
 
@@ -130,7 +140,7 @@ export default function PrimarySearchAppBar() {
                             onClick={handleMobileMenuOpen}
                             color="inherit"
                         >
-                            <MenuOutlinedIcon className = {classes.mobileMenuIcon}/>
+                            <MenuOutlinedIcon className = {classes.mobileMenuIcon} fontSize={"large"}/>
                         </IconButton>
                     </div>
                 </Toolbar>

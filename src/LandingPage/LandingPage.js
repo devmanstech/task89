@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import HeaderBar from "./HeaderBar";
 import {Grid, Typography, Button} from "@material-ui/core";
 import {makeStyles} from '@material-ui/core/styles';
@@ -8,17 +8,14 @@ import body3_illustration from '../Assets/Img/body3_illustration.png'
 import frame_wave_green from '../Assets/Img/frame_wave_green.png'
 import body3_line from '../Assets/Img/body3_line.png'
 import FooterLogo from '../Assets/Logo/FooterLogo.svg'
-import HeaderLogo from '../Assets/Logo/HeaderLogo.svg'
 import ReactPlayer from "react-player"
 
 const useStyles = makeStyles((theme) => ({
     container: {
-        height: '100vh',
         background: '#F2F2F2',
         paddingTop: 60,
         [theme.breakpoints.down('md')]: {
             paddingTop: 30,
-            paddingLeft: 20,
         },
     },
     center: {
@@ -26,25 +23,41 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         alignItems: 'center',
     },
+    body1_container:{
+        paddingLeft:70,
+        [theme.breakpoints.down('md')]: {
+            padding:20,
+            paddingLeft: 40,
 
+        },
+    },
     body1_typo: {
         color: '#EB5757',
         fontFamily: 'roboto slab',
         fontSize: 76,
         paddingTop: 10,
+        [theme.breakpoints.down('xs')]: {
+            fontSize: 56,
+        },
     },
     body1_typo1: {
         color: '#424242',
         fontFamily: 'Roboto, sans-serif;',
         fontSize: 24,
-        paddingTop: 10
+        paddingTop: 10,
+        [theme.breakpoints.down('xs')]: {
+            fontSize: 18,
+        },
 
     },
     body1_img_container: {
         paddingTop: 50,
-        paddingLeft: 50,
-        [theme.breakpoints.down('md')]: {
-            padding: 0
+        width:'100%',
+        [theme.breakpoints.up('sm')]: {
+            padding: 70
+        },
+        [theme.breakpoints.down('xs')]: {
+            padding: 40
         },
     },
     signButton: {
@@ -54,75 +67,163 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 24,
         fontWeight: 'bold',
         width: '60%',
-        marginTop: 20
+        marginTop: 20,
+        [theme.breakpoints.down('xs')]: {
+            fontSize: 17,
+        },
     },
     body2_container: {
         backgroundImage: `url(${frame_wave_blue})`,
-        width: '100%',
         backgroundRepeat: 'no-repeat',
         height: 120,
-        marginTop: 30
+        marginTop: 30,
+        paddingLeft: 70,
+        [theme.breakpoints.down('xs')]: {
+            paddingLeft: 40,
+        },
+
     },
     body2_sub_container: {
-        height: 1150,
         left: 0,
-        width: '100%',
+        paddingLeft: 70,
         backgroundColor: '#2F7686',
+        height:1150,
+        [theme.breakpoints.down('xs')]: {
+            paddingLeft:40,
+            paddingRight: 20,
+            height:1600,
+        },
+        [theme.breakpoints.down('md')]: {
+            height:1350
+        },
+        [theme.breakpoints.down('sm')]: {
+            height:1500
+        },
     },
     body2_title_typo: {
         color: "#F2F2F2",
-        paddingLeft: 70,
         paddingTop: 40,
+        [theme.breakpoints.down('xs')]: {
+            fontSize: 40,
+        },
     },
     body2_title_content: {
         color: "#F2F2F2",
-        paddingLeft: 70,
         paddingTop: 20,
-        lineHeight: 1.5
+        lineHeight: 1.5,
+        [theme.breakpoints.down('xs')]: {
+            fontSize: 20,
+        },
     },
     videoPlay: {
         display: 'flex',
         justifyContent: "center",
         alignItems: 'center',
-        margin: 30
+        margin: 30,
+        [theme.breakpoints.down('xs')]: {
+            margin: 10,
+        },
     },
     body3_container: {
         backgroundImage: `url(${frame_wave_green})`,
-        width: '100%',
         backgroundRepeat: 'no-repeat',
         height: 120,
-        marginTop:-150
+        paddingLeft:70,
+        marginTop:-150,
+        [theme.breakpoints.down('xs')]: {
+            marginTop:'-60px!important',
+            paddingLeft:40
+        },
+        [theme.breakpoints.down('md')]: {
+            paddingRight:20,
+            marginTop:-200,
+        },
+        [theme.breakpoints.down('sm')]: {
+            marginTop:-200
+        },
     },
     body3_sub_container: {
-        height: 820,
         width: '100%',
+        paddingBottom:50,
+        height: '100%',
         backgroundColor: '#27AE60',
+
     },
     body3_faq_img_container: {
         paddingTop: 50,
-        paddingLeft: 70
+        paddingLeft: 70,
+        [theme.breakpoints.down('xs')]: {
+            width: '255px!important',
+            paddingLeft: 40,
+        },
+        [theme.breakpoints.down('sm')]: {
+            width: '240px!important',
+        },
+        [theme.breakpoints.down('md')]: {
+            width: 300,
+        },
+        [theme.breakpoints.up('md')]: {
+            width: 400,
+        },
     },
     body3_list_item_title: {
         fontSize: 25,
         color: "#F2F2F2",
-        marginLeft: 50,
-        paddingTop: 35
+        marginLeft: 70,
+        paddingTop: 35,
+        paddingRight:15,
+        [theme.breakpoints.down('xs')]: {
+            marginLeft: 40,
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize:20
+        },
     },
     body3_list_item_content: {
         fontSize: 18,
         color: "#F2F2F2",
-        marginLeft: 50,
-        paddingRight: 30
+        marginLeft: 70,
+        paddingRight: 30,
+        [theme.breakpoints.down('xs')]: {
+            marginLeft: 40,
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize:15
+        },
+    },
+    body3_line_image:{
+        height:700,
+        width:8,
+        [theme.breakpoints.down('xs')]: {
+            display: 'none',
+        },
     },
     footerContainer: {
         background: "#F2F2F2",
     },
     footerLogo:{
         margin:20
-    }
+    },
+    footer_customer:{
+        color:'#424242',fontWeight:400,fontSize:24,
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '14px!important',
+        },
+        [theme.breakpoints.up('sm')]: {
+            fontSize: 18,
+        },
+        [theme.breakpoints.up('md')]: {
+            fontSize: 20,
+        },
+    },
 }));
 
 function LandingPage(props) {
+    useEffect(()=>{
+        console.log("this is window width",window.innerWidth)
+    },[window.innerWidth])
+    console.log("this is window width",window.innerWidth)
+
     const classes = useStyles()
     return (
         <>
@@ -131,19 +232,19 @@ function LandingPage(props) {
                 {/*body 1*/}
                 {/*-------------------------------------------------------*/}
                 <Grid container>
-                    <Grid item xs={12} sm={6} style={{paddingLeft: 70}}>
+                    <Grid item sm={12} md={6} className={classes.body1_container}>
                         <Typography className={classes.body1_typo}>Shop with ease with verified identify</Typography>
                         <Typography className={classes.body1_typo1}>Create a token dolor sit amet,<br/> based on
                             patented technology.</Typography>
                         <Button className={classes.signButton} variant={"contained"}>SIGN UP NOW</Button>
                     </Grid>
-                    <Grid item xs={12} sm={6}>
-                        <img src={body_1_img} alt="Body 1 image" className={classes.body1_img_container}/>
+                    <Grid item sm={12} md={6} className={classes.body1_img_container}>
+                        <img src={body_1_img} alt="Body 1 image" style={{width:'inherit'}}/>
                     </Grid>
                 </Grid>
                 {/*body 2*/}
                 {/*-------------------------------------------------------*/}
-                <div className={classes.body2_container}>
+                <div className={classes.body2_container} id="howitwork">
                     <Typography className={classes.body2_title_typo} variant={"h2"}>How it works?</Typography>
                 </div>
                 <div className={classes.body2_sub_container}>
@@ -172,15 +273,13 @@ function LandingPage(props) {
                 </div>
                 {/*body 3*/}
                 {/*-------------------------------------------------------*/}
-                <div className={classes.body3_container}>
+                <div className={classes.body3_container} id="faq">
                     <Typography className={classes.body2_title_typo} variant={"h2"}>FAQ</Typography>
                 </div>
                 <div className={classes.body3_sub_container}>
                     <Grid container>
-                        <Grid item xs={12} sm={5}>
-                            <div className={classes.body3_faq_img_container}>
-                                <img src={body3_illustration} alt="" width={"400"}/>
-                            </div>
+                        <Grid item xs={12} sm={6} md={5}>
+                            <img src={body3_illustration} alt="body3Faqimage"  className={classes.body3_faq_img_container}/>
 
                             <li className={classes.body3_list_item_title}>Why do we have to use a
                                 token?
@@ -200,8 +299,8 @@ function LandingPage(props) {
 
 
                         </Grid>
-                        <Grid item xs={12} sm={7} style={{display: 'flex', paddingRight: 15}}>
-                            <img src={body3_line} alt="" height={700} width={8}/>
+                        <Grid item xs={12} sm={6} md={7} style={{display: 'flex', paddingRight: 15}}>
+                            <img src={body3_line} alt=""  className={classes.body3_line_image}/>
                             <div>
 
                                 <li className={classes.body3_list_item_title}>What if I am not able to verify
@@ -255,16 +354,16 @@ function LandingPage(props) {
                         </Grid>
                         <Grid item xs={6}>
                             <Grid container>
-                                <Grid item xs={6}>
+                                <Grid item xs={12} sm={6} md={6}>
                                     <div style={{marginTop:20,fontFamily:'roboto'}}>
-                                        <span style={{color:'#311b6e',fontWeight:'bold',fontSize:35}}>MyID</span>
-                                        <span style={{color:'#ff0000',fontWeight:500,fontSize:35}}>Token</span>
+                                        <span style={{color:'#311b6e',fontWeight:'bold',fontSize:30}}>MyID</span>
+                                        <span style={{color:'#ff0000',fontWeight:500,fontSize:30}}>Token</span>
                                     </div>
                                     <span style={{color:'#424242',fontWeight:400,fontSize:25}}>+365###</span>
                                 </Grid>
-                                <Grid item xs={6}>
-                                    <div style={{color:'#424242',fontWeight:400,fontSize:24,marginTop:20}}>Customer service:</div>
-                                    <div style={{color:'#424242',fontWeight:400,fontSize:24}}>support@myidtoken.com</div>
+                                <Grid item xs={12} sm={6} md={6}>
+                                    <div style={{marginTop:20}} className={classes.footer_customer}>Customer service:</div>
+                                    <div className={classes.footer_customer}>support@myidtoken.com</div>
                                 </Grid>
                             </Grid>
                         </Grid>
