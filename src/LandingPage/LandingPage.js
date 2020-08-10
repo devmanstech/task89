@@ -13,7 +13,7 @@ import ReactPlayer from "react-player"
 const useStyles = makeStyles((theme) => ({
     container: {
         background: '#F2F2F2',
-        paddingTop: 60,
+        paddingTop: 20,
         [theme.breakpoints.down('md')]: {
             paddingTop: 30,
         },
@@ -53,8 +53,11 @@ const useStyles = makeStyles((theme) => ({
     body1_img_container: {
         paddingTop: 50,
         width:'100%',
+        [theme.breakpoints.up('md')]: {
+            padding: '100px!important',
+        },
         [theme.breakpoints.up('sm')]: {
-            padding: 70
+            padding: 70,
         },
         [theme.breakpoints.down('xs')]: {
             padding: 40
@@ -74,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
     },
     body2_container: {
         backgroundImage: `url(${frame_wave_blue})`,
-        backgroundRepeat: 'no-repeat',
+        backgroundRepeat: 'repeat-x',
         height: 120,
         marginTop: 30,
         paddingLeft: 70,
@@ -88,33 +91,56 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: 70,
         backgroundColor: '#2F7686',
         height:1150,
+        marginBottom:-80,
         [theme.breakpoints.down('xs')]: {
             paddingLeft:40,
             paddingRight: 20,
-            height:1600,
+            height:1400,
+
         },
-        [theme.breakpoints.down('md')]: {
-            height:1350
+        [theme.breakpoints.up('md')]: {
+            marginBottom:-180,
         },
         [theme.breakpoints.down('sm')]: {
-            height:1500
+            marginBottom:-80,
         },
     },
     body2_title_typo: {
         color: "#F2F2F2",
-        paddingTop: 40,
+        position:'absolute',
+        top:60,
+        paddingLeft:70,
+        fontSize: 40,
         [theme.breakpoints.down('xs')]: {
-            fontSize: 40,
+            paddingLeft:40,
         },
     },
     body2_title_content: {
         color: "#F2F2F2",
         paddingTop: 20,
-        lineHeight: 1.5,
+        lineHeight: 1.2,
+        fontSize: 20,
         [theme.breakpoints.down('xs')]: {
             fontSize: 20,
+            paddingTop:100
+        },
+        [theme.breakpoints.down('md')]: {
+            fontSize: 20,
+            paddingTop:100
+        },
+        [theme.breakpoints.up('lg')]: {
+            paddingTop:20
         },
     },
+    show_video_title:{
+        color: "#F2F2F2",
+        top:60,
+        marginTop: 40,
+        marginLeft:-20,
+        position:'initial',
+        fontSize: 40,
+    },
+
     videoPlay: {
         display: 'flex',
         justifyContent: "center",
@@ -147,17 +173,19 @@ const useStyles = makeStyles((theme) => ({
         paddingBottom:50,
         height: '100%',
         backgroundColor: '#27AE60',
+        paddingTop:30
 
     },
     body3_faq_img_container: {
-        paddingTop: 50,
         paddingLeft: 70,
         [theme.breakpoints.down('xs')]: {
             width: '255px!important',
             paddingLeft: 40,
+            marginTop:80
         },
         [theme.breakpoints.down('sm')]: {
             width: '240px!important',
+            marginTop:50
         },
         [theme.breakpoints.down('md')]: {
             width: 300,
@@ -167,7 +195,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     body3_list_item_title: {
-        fontSize: 25,
+        fontSize: 20,
         color: "#F2F2F2",
         marginLeft: 70,
         paddingTop: 35,
@@ -180,7 +208,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     body3_list_item_content: {
-        fontSize: 18,
+        fontSize: 15,
         color: "#F2F2F2",
         marginLeft: 70,
         paddingRight: 30,
@@ -236,7 +264,7 @@ function LandingPage(props) {
                         <Typography className={classes.body1_typo}>Shop with ease with verified identify</Typography>
                         <Typography className={classes.body1_typo1}>Create a token dolor sit amet,<br/> based on
                             patented technology.</Typography>
-                        <Button className={classes.signButton} variant={"contained"}>SIGN UP NOW</Button>
+                        <Button className={classes.signButton} variant={"contained"} >SIGN UP NOW</Button>
                     </Grid>
                     <Grid item sm={12} md={6} className={classes.body1_img_container}>
                         <img src={body_1_img} alt="Body 1 image" style={{width:'inherit'}}/>
@@ -244,7 +272,11 @@ function LandingPage(props) {
                 </Grid>
                 {/*body 2*/}
                 {/*-------------------------------------------------------*/}
-                <div className={classes.body2_container} id="howitwork">
+                {/*<div className={classes.body2_container} id="howitwork">*/}
+                {/*    <Typography className={classes.body2_title_typo} variant={"h2"}>How it works?</Typography>*/}
+                {/*</div>*/}
+                <div id="howitwork" style={{position:'relative'}}>
+                    <img src={frame_wave_blue} alt="" style={{width:'100%',marginBottom:-10}}/>
                     <Typography className={classes.body2_title_typo} variant={"h2"}>How it works?</Typography>
                 </div>
                 <div className={classes.body2_sub_container}>
@@ -261,24 +293,29 @@ function LandingPage(props) {
                         incrementum diem.
                         <br/>Oratio me istius philosophi non offendit; Duo Reges: constructio
                         interrete.</Typography>
-                    <Typography className={classes.body2_title_typo} variant={"h2"} align={"center"}
-                                style={{marginTop: 10, paddingLeft: 0}}>See video how it works</Typography>
+                    <Typography variant={"h2"} align={"center"} className={classes.show_video_title} >See video how it works</Typography>
                     <div className={classes.videoPlay}>
                         <ReactPlayer
                             url="https://www.youtube.com/watch?v=ug50zmP9I7s"
                         />
                     </div>
-                    <div className={classes.center}><Button className={classes.signButton} variant={"contained"}>SIGN
+                    <div className={classes.center} style={{marginLeft:-10}}><Button className={classes.signButton} variant={"contained"}>SIGN
                         UP NOW</Button></div>
                 </div>
                 {/*body 3*/}
                 {/*-------------------------------------------------------*/}
-                <div className={classes.body3_container} id="faq">
+                {/*<div className={classes.body3_container} id="faq">*/}
+                {/*    <Typography className={classes.body2_title_typo} variant={"h2"}>FAQ</Typography>*/}
+                {/*</div>*/}
+
+                <div id="faq" style={{position:'relative'}}>
+                    <img src={frame_wave_green} alt="" style={{width:'100%',marginBottom:-10}}/>
                     <Typography className={classes.body2_title_typo} variant={"h2"}>FAQ</Typography>
                 </div>
+
                 <div className={classes.body3_sub_container}>
                     <Grid container>
-                        <Grid item xs={12} sm={6} md={5}>
+                        <Grid item xs={12} sm={6} md={6} lg={5}>
                             <img src={body3_illustration} alt="body3Faqimage"  className={classes.body3_faq_img_container}/>
 
                             <li className={classes.body3_list_item_title}>Why do we have to use a
@@ -299,7 +336,7 @@ function LandingPage(props) {
 
 
                         </Grid>
-                        <Grid item xs={12} sm={6} md={7} style={{display: 'flex', paddingRight: 15}}>
+                        <Grid item xs={12} sm={6} md={6} lg={7} style={{display: 'flex', paddingRight: 15}}>
                             <img src={body3_line} alt=""  className={classes.body3_line_image}/>
                             <div>
 
@@ -338,8 +375,6 @@ function LandingPage(props) {
 
 
                             </div>
-
-
                         </Grid>
                     </Grid>
                 </div>
