@@ -45,7 +45,8 @@ const useStyles = makeStyles((theme) => ({
     body1_typo1: {
         color: '#424242',
         fontFamily: 'Roboto, sans-serif;',
-        fontSize: 18,
+        fontSize: 24,
+        marginBottom:30,
         paddingTop: 10,
         [theme.breakpoints.down('xs')]: {
             fontSize: 18,
@@ -57,8 +58,9 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: 'Roboto, sans-serif;',
         fontSize: 15,
         padding:70,
+        paddingTop:30,
         [theme.breakpoints.down('xs')]: {
-            fontSize: 18,
+            fontSize: 13,
             padding:40
         },
 
@@ -82,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: 10,
         fontSize: 24,
         fontWeight: 'bold',
-        marginTop: 20,
+        marginTop: 30,
         marginBottom: 20,
         [theme.breakpoints.down('xs')]: {
             fontSize: 17,
