@@ -29,6 +29,10 @@ const useStyles = makeStyles((theme) => ({
         height: 70,
         [theme.breakpoints.down('md')]: {
             height: 50,
+            marginTop:0,
+        },
+        [theme.breakpoints.down('xs')]: {
+            width:100,
         },
     },
     menuButton: {
@@ -40,22 +44,41 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 24,
         fontWeight: 'bold',
         fontFamily: 'Roboto, sans-serif;',
-        color: '#616161'
+        color: '#616161',
+        [theme.breakpoints.down('xs')]: {
+            fontSize:15,
+        },
     },
-    signButton: {
+    siginInButton: {
         background: '#ffbc6d',
         color: 'white',
-        marginRight: 10,
         fontSize: 24,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        [theme.breakpoints.down('xs')]: {
+            fontSize:10,
+        },
+    },
+    siginUpButton:{
+        color: '#ffbc6d',
+        fontSize: 24,
+        fontWeight: 'bold',
+        width:'100%',
+        [theme.breakpoints.down('xs')]: {
+            fontSize:10,
+        },
+
     },
     mobileMenuIcon: {
-        color: 'black'
+        color: 'black',
+        [theme.breakpoints.down('xs')]: {
+            fontSize:20,
+        },
     },
     sectionDesktop: {
         display: 'none',
         [theme.breakpoints.up('md')]: {
             display: 'flex',
+            alignItems:'flex-start'
         },
     },
     sectionMobile: {
@@ -65,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     menuItem: {
-        padding: 0, marginBottom: 10
+        padding: 0, marginBottom: 10,
     },
 }));
 
@@ -98,43 +121,13 @@ export default function PrimarySearchAppBar() {
                 <a href="#faq" style={{width: '100%', textDecoration: 'none'}}> <Button className={classes.button}
                                                                                         fullWidth>FAQ</Button></a>
             </MenuItem>
-            <MenuItem className={classes.menuItem} onClick={handleMobileMenuClose}
-                      style={{display: 'flex', paddingBottom: 10, paddingTop: 10, justifyContent:'center'}}>
-                {/*<Button className={classes.button} style={{margin:'auto'}} fullWidth>*/}
-                {/*    EN*/}
-                {/*    <ArrowDropDownIcon />*/}
-                {/*</Button>*/}
-                <Translate/>
-            </MenuItem>
-
-            <MenuItem>
-                <Button className={classes.signButton} variant={"contained"} fullWidth>SIGN IN</Button>
-            </MenuItem>
-            <MenuItem>
-                <Button className={classes.signButton} variant={"contained"} fullWidth>SIGN UP</Button>
-            </MenuItem>
         </Menu>
     );
 
     return (
         <div className={classes.grow}>
             <AppBar position="static" className={classes.container}>
-                <Toolbar>
-                    <img src={Logo} alt="React Logo" className={classes.logo}/>
-                    <div className={classes.grow}/>
-                    <div className={classes.sectionDesktop}>
-                        <a href="#howitwork" style={{textDecoration: 'none'}}><Button className={classes.button}>How It
-                            works?</Button></a>
-                        <a href="#faq" style={{textDecoration: 'none'}}><Button className={classes.button}>FAQ</Button></a>
-                        {/*<Button className={classes.button}>*/}
-                        {/*    EN*/}
-                        {/*    <ArrowDropDownIcon />*/}
-                        {/*</Button>*/}
-                        <Translate/>
-                        <Button className={classes.signButton} variant={"contained"}>SIGN IN</Button>
-                        <Button className={classes.signButton} variant={"contained"}>SIGN UP</Button>
-
-                    </div>
+                <Toolbar style={{alignItems:'flex-start'}}>
                     <div className={classes.sectionMobile}>
                         <IconButton
                             aria-label="show more"
@@ -144,6 +137,23 @@ export default function PrimarySearchAppBar() {
                         >
                             <MenuOutlinedIcon className={classes.mobileMenuIcon} fontSize={"large"}/>
                         </IconButton>
+                    </div>
+
+                    <img src={Logo} alt="React Logo" className={classes.logo}/>
+                    <div className={classes.grow}/>
+                    <div className={classes.sectionDesktop}>
+                        <a href="#howitwork" style={{textDecoration: 'none'}}><Button className={classes.button}>How It
+                            works?</Button></a>
+                        <a href="#faq" style={{textDecoration: 'none'}}><Button className={classes.button}>FAQ</Button></a>
+                    </div>
+
+                    <Translate/>
+
+                    <div style={{paddingTop:5}}>
+                        <div>
+                            <Button className={classes.siginInButton} variant={"contained"}>SIGN IN</Button>
+                        </div>
+                        <a href="#" style={{ textDecorationColor: '#ffbc6d'}}><Button className={classes.siginUpButton}>SIGN UP</Button></a>
                     </div>
                 </Toolbar>
             </AppBar>

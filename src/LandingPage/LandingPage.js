@@ -384,10 +384,10 @@ function LandingPage(props) {
 
                 <div className={classes.footerContainer}>
                     <Grid container>
-                        <Grid item xs={6}>
+                        <Grid item xs={6} sm={4} md={6}>
                             <img src={FooterLogo} alt="" width={150} className={classes.footerLogo}/>
                         </Grid>
-                        <Grid item xs={6}>
+                        <Grid item xs={6} sm={8} md={6}>
                             <Grid container>
                                 <Grid item xs={12} sm={6} md={6}>
                                     <div style={{marginTop:20,fontFamily:'roboto'}}>
