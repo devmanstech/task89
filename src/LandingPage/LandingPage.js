@@ -23,12 +23,14 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         alignItems: 'center',
     },
-    body1_container:{
-        paddingLeft:70,
+    body1_container: {
+        paddingLeft: 70,
         [theme.breakpoints.down('md')]: {
-            padding:20,
+            padding: 20,
             paddingLeft: 40,
-
+        },
+        [theme.breakpoints.up('md')]: {
+            paddingBottom:50
         },
     },
     body1_typo: {
@@ -37,22 +39,33 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 76,
         paddingTop: 10,
         [theme.breakpoints.down('xs')]: {
-            fontSize: 56,
+            fontSize: 48,
         },
     },
     body1_typo1: {
         color: '#424242',
         fontFamily: 'Roboto, sans-serif;',
-        fontSize: 24,
+        fontSize: 18,
         paddingTop: 10,
         [theme.breakpoints.down('xs')]: {
             fontSize: 18,
         },
 
     },
+    body1_typo2: {
+        color: '#424242',
+        fontFamily: 'Roboto, sans-serif;',
+        fontSize: 15,
+        padding:70,
+        [theme.breakpoints.down('xs')]: {
+            fontSize: 18,
+            padding:40
+        },
+
+    },
     body1_img_container: {
         paddingTop: 50,
-        width:'100%',
+        width: '100%',
         [theme.breakpoints.up('md')]: {
             padding: '100px!important',
         },
@@ -69,8 +82,8 @@ const useStyles = makeStyles((theme) => ({
         marginRight: 10,
         fontSize: 24,
         fontWeight: 'bold',
-        width: '60%',
         marginTop: 20,
+        marginBottom: 20,
         [theme.breakpoints.down('xs')]: {
             fontSize: 17,
         },
@@ -90,29 +103,30 @@ const useStyles = makeStyles((theme) => ({
         left: 0,
         paddingLeft: 70,
         backgroundColor: '#2F7686',
-        height:1150,
-        marginBottom:-80,
+        // height: 1150,
+        paddingBottom: 280,
         [theme.breakpoints.down('xs')]: {
-            paddingLeft:40,
+            paddingLeft: 40,
             paddingRight: 20,
-            height:1400,
-
+            paddingBottom: 180,
+            // height: 1400,
         },
         [theme.breakpoints.up('md')]: {
-            marginBottom:-180,
+            marginBottom: -180,
+            // paddingBottom: 180
         },
         [theme.breakpoints.down('sm')]: {
-            marginBottom:-80,
+            marginBottom: -80,
         },
     },
     body2_title_typo: {
         color: "#F2F2F2",
-        position:'absolute',
-        top:60,
-        paddingLeft:70,
+        position: 'absolute',
+        top: 60,
+        paddingLeft: 70,
         fontSize: 40,
         [theme.breakpoints.down('xs')]: {
-            paddingLeft:40,
+            paddingLeft: 40,
         },
     },
     body2_title_content: {
@@ -122,25 +136,24 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 20,
         [theme.breakpoints.down('xs')]: {
             fontSize: 20,
-            paddingTop:100
+            paddingTop: 100
         },
         [theme.breakpoints.down('md')]: {
             fontSize: 20,
-            paddingTop:100
+            paddingTop: 100
         },
         [theme.breakpoints.up('lg')]: {
-            paddingTop:20
+            paddingTop: 40
         },
     },
-    show_video_title:{
+    show_video_title: {
         color: "#F2F2F2",
-        top:60,
+        top: 60,
         marginTop: 40,
-        marginLeft:-20,
-        position:'initial',
+        marginLeft: -20,
+        position: 'initial',
         fontSize: 40,
     },
-
     videoPlay: {
         display: 'flex',
         justifyContent: "center",
@@ -154,26 +167,27 @@ const useStyles = makeStyles((theme) => ({
         backgroundImage: `url(${frame_wave_green})`,
         backgroundRepeat: 'no-repeat',
         height: 120,
-        paddingLeft:70,
-        marginTop:-150,
+        paddingLeft: 70,
+        // marginTop: -150,
+        // marginTop: -150,
         [theme.breakpoints.down('xs')]: {
-            marginTop:'-60px!important',
-            paddingLeft:40
+            marginTop: '-60px!important',
+            paddingLeft: 40
         },
         [theme.breakpoints.down('md')]: {
-            paddingRight:20,
-            marginTop:-200,
+            paddingRight: 20,
+            marginTop: -200,
         },
         [theme.breakpoints.down('sm')]: {
-            marginTop:-200
+            marginTop: -200
         },
     },
     body3_sub_container: {
         width: '100%',
-        paddingBottom:50,
+        paddingBottom: 50,
         height: '100%',
         backgroundColor: '#27AE60',
-        paddingTop:30
+        paddingTop: 30
 
     },
     body3_faq_img_container: {
@@ -181,11 +195,11 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]: {
             width: '255px!important',
             paddingLeft: 40,
-            marginTop:80
+            marginTop: 80
         },
         [theme.breakpoints.down('sm')]: {
             width: '240px!important',
-            marginTop:50
+            marginTop: 50
         },
         [theme.breakpoints.down('md')]: {
             width: 300,
@@ -199,12 +213,12 @@ const useStyles = makeStyles((theme) => ({
         color: "#F2F2F2",
         marginLeft: 70,
         paddingTop: 35,
-        paddingRight:15,
+        paddingRight: 15,
         [theme.breakpoints.down('xs')]: {
             marginLeft: 40,
         },
         [theme.breakpoints.down('sm')]: {
-            fontSize:20
+            fontSize: 20
         },
     },
     body3_list_item_content: {
@@ -216,12 +230,12 @@ const useStyles = makeStyles((theme) => ({
             marginLeft: 40,
         },
         [theme.breakpoints.down('sm')]: {
-            fontSize:15
+            fontSize: 15
         },
     },
-    body3_line_image:{
-        height:700,
-        width:8,
+    body3_line_image: {
+        height: 700,
+        width: 8,
         [theme.breakpoints.down('xs')]: {
             display: 'none',
         },
@@ -229,11 +243,11 @@ const useStyles = makeStyles((theme) => ({
     footerContainer: {
         background: "#F2F2F2",
     },
-    footerLogo:{
-        margin:20
+    footerLogo: {
+        margin: 20
     },
-    footer_customer:{
-        color:'#424242',fontWeight:400,fontSize:24,
+    footer_customer: {
+        color: '#424242', fontWeight: 400, fontSize: 24,
         [theme.breakpoints.down('xs')]: {
             fontSize: '14px!important',
         },
@@ -247,76 +261,102 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function LandingPage(props) {
-    useEffect(()=>{
-        console.log("this is window width",window.innerWidth)
-    },[window.innerWidth])
-    console.log("this is window width",window.innerWidth)
+    useEffect(() => {
+        console.log("this is window width", window.innerWidth)
+    }, [window.innerWidth])
+    console.log("this is window width", window.innerWidth)
 
     const classes = useStyles()
     return (
         <>
             <div className={classes.container}>
                 <HeaderBar/>
-                {/*body 1*/}
-                {/*-------------------------------------------------------*/}
+                {/*body1*/}
                 <Grid container>
                     <Grid item sm={12} md={6} className={classes.body1_container}>
                         <Typography className={classes.body1_typo}>Shop with ease with verified identify</Typography>
-                        <Typography className={classes.body1_typo1}>Create a token dolor sit amet,<br/> based on
+                        <Typography className={classes.body1_typo1}>
+                            Create a token dolor sit amet, based on
                             patented technology.</Typography>
-                        <Button className={classes.signButton} variant={"contained"} >SIGN UP NOW</Button>
+
+
+                        <Button className={classes.signButton} variant={"contained"}>SIGN UP NOW</Button>
                     </Grid>
                     <Grid item sm={12} md={6} className={classes.body1_img_container}>
-                        <img src={body_1_img} alt="Body 1 image" style={{width:'inherit'}}/>
+                        <img src={body_1_img} alt="Body 1 image" style={{width: 'inherit'}}/>
                     </Grid>
+                    <Typography className={classes.body1_typo2}>
+                        Shop with ease in Internet
+
+                        MyIDToken is ipsum dolor sit amet, consectetur adipiscing elit. Nihil opus est exemplis hoc facere longius.
+
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Maximas vero virtutes iacere omnis necesse est voluptate dominante. Esse enim quam vellet iniquus iustus poterat inpune.
+
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Deinde prima illa, quae in congressu solemus: Quid tu, inquit, huc? Quod non faceret, si in voluptate summum bonum poneret. Honesta oratio, Socratica, Platonis etiam. Quae cum essent dicta, finem fecimus et ambulandi et disputandi.
+
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ita similis erit ei finis boni, atque antea fuerat, neque idem tamen; Respondent extrema primis, media utrisque, omnia omnibus. Illa sunt similia: hebes acies est cuipiam oculorum, corpore alius senescit; Eadem nunc mea adversum te oratio est. Est enim effectrix multarum et magnarum voluptatum. Haec bene dicuntur, nec ego repugno, sed inter sese ipsa pugnant.
+
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quamquam haec quidem praeposita recte et reiecta dicere licebit. Restinguet citius, si ardentem acceperit. Est enim effectrix multarum et magnarum voluptatum. Haec bene dicuntur, nec ego repugno, sed inter sese ipsa pugnant. Non minor, inquit, voluptas percipitur ex vilissimis rebus quam ex pretiosissimis.
+
+                        Non minor, inquit, voluptas percipitur ex vilissimis rebus quam ex pretiosissimis!
+                    </Typography>
+
                 </Grid>
-                {/*body 2*/}
-                {/*-------------------------------------------------------*/}
-                {/*<div className={classes.body2_container} id="howitwork">*/}
-                {/*    <Typography className={classes.body2_title_typo} variant={"h2"}>How it works?</Typography>*/}
-                {/*</div>*/}
-                <div id="howitwork" style={{position:'relative'}}>
-                    <img src={frame_wave_blue} alt="" style={{width:'100%',marginBottom:-10}}/>
+
+                {/*body2*/}
+                <div id="howitwork" style={{position: 'relative'}}>
+                    <img src={frame_wave_blue} alt="" style={{width: '100%', marginBottom: -10}}/>
                     <Typography className={classes.body2_title_typo} variant={"h2"}>How it works?</Typography>
                 </div>
                 <div className={classes.body2_sub_container}>
                     <Typography className={classes.body2_title_content} variant={"h5"}>
                         MyIDToken is new service that quidem tibi studiose et diligenter tractandos magnopere
                         censeo.
-                        <br/> Si verbum sequimur, primum longius verbum praepositum quam bonum. Sed hoc sane
+                        Si verbum sequimur, primum longius verbum praepositum quam bonum. Sed hoc sane
                         concedamus.
-                        <br/> Si enim ad populum me vocas, eum.<br/><br/>
-                        <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed residamus, inquit, si
+                        Si enim ad populum me vocas, eum.
+                    </Typography>
+
+                    <Typography className={classes.body2_title_content} variant={"h5"}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed residamus, inquit, si
                         placet.
-                        <br/>Cum ageremus, inquit, vitae beatum et eundem supremum diem, scribebamus haec.
-                        <br/>Illis videtur, qui illud non dubitant bonum dicere -; Negat enim summo bono afferre
+                        Cum ageremus, inquit, vitae beatum et eundem supremum diem, scribebamus haec.
+                        Illis videtur, qui illud non dubitant bonum dicere -; Negat enim summo bono afferre
                         incrementum diem.
-                        <br/>Oratio me istius philosophi non offendit; Duo Reges: constructio
-                        interrete.</Typography>
-                    <Typography variant={"h2"} align={"center"} className={classes.show_video_title} >See video how it works</Typography>
+                        Oratio me istius philosophi non offendit; Duo Reges: constructio
+                        interrete.
+                    </Typography>
+                    <Typography variant={"h2"} align={"center"} className={classes.show_video_title}>See video how it
+                        works</Typography>
                     <div className={classes.videoPlay}>
                         <ReactPlayer
                             url="https://www.youtube.com/watch?v=ug50zmP9I7s"
                         />
                     </div>
-                    <div className={classes.center} style={{marginLeft:-10}}><Button className={classes.signButton} variant={"contained"}>SIGN
-                        UP NOW</Button></div>
+                    <div className={classes.center} style={{marginLeft: -10}}>
+                        <Button variant={"contained"} className={classes.signButton}>SIGN UP NOW</Button></div>
+                    <Typography className={classes.body2_title_content} variant={"h5"}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed residamus, inquit, si
+                        placet.
+                        Cum ageremus, inquit, vitae beatum et eundem supremum diem, scribebamus haec.
+                        Illis videtur, qui illud non dubitant bonum dicere -; Negat enim summo bono afferre
+                        incrementum diem.
+                        Oratio me istius philosophi non offendit; Duo Reges: constructio
+                        interrete.
+                    </Typography>
                 </div>
-                {/*body 3*/}
-                {/*-------------------------------------------------------*/}
-                {/*<div className={classes.body3_container} id="faq">*/}
-                {/*    <Typography className={classes.body2_title_typo} variant={"h2"}>FAQ</Typography>*/}
-                {/*</div>*/}
 
-                <div id="faq" style={{position:'relative'}}>
-                    <img src={frame_wave_green} alt="" style={{width:'100%',marginBottom:-10}}/>
+                {/*body3*/}
+                <div id="faq" style={{position: 'relative'}}>
+                    <img src={frame_wave_green} alt="" style={{width: '100%', marginBottom: -10}}/>
                     <Typography className={classes.body2_title_typo} variant={"h2"}>FAQ</Typography>
                 </div>
-
                 <div className={classes.body3_sub_container}>
                     <Grid container>
                         <Grid item xs={12} sm={6} md={6} lg={5}>
-                            <img src={body3_illustration} alt="body3Faqimage"  className={classes.body3_faq_img_container}/>
+                            <img src={body3_illustration} alt="body3Faqimage"
+                                 className={classes.body3_faq_img_container}/>
 
                             <li className={classes.body3_list_item_title}>Why do we have to use a
                                 token?
@@ -337,7 +377,7 @@ function LandingPage(props) {
 
                         </Grid>
                         <Grid item xs={12} sm={6} md={6} lg={7} style={{display: 'flex', paddingRight: 15}}>
-                            <img src={body3_line} alt=""  className={classes.body3_line_image}/>
+                            <img src={body3_line} alt="" className={classes.body3_line_image}/>
                             <div>
 
                                 <li className={classes.body3_list_item_title}>What if I am not able to verify
@@ -380,8 +420,6 @@ function LandingPage(props) {
                 </div>
 
                 {/*footer*/}
-                {/*-------------------------------------------------------*/}
-
                 <div className={classes.footerContainer}>
                     <Grid container>
                         <Grid item xs={6} sm={4} md={6}>
@@ -390,14 +428,15 @@ function LandingPage(props) {
                         <Grid item xs={6} sm={8} md={6}>
                             <Grid container>
                                 <Grid item xs={12} sm={6} md={6}>
-                                    <div style={{marginTop:20,fontFamily:'roboto'}}>
-                                        <span style={{color:'#311b6e',fontWeight:'bold',fontSize:30}}>MyID</span>
-                                        <span style={{color:'#ff0000',fontWeight:500,fontSize:30}}>Token</span>
+                                    <div style={{marginTop: 20, fontFamily: 'roboto'}}>
+                                        <span style={{color: '#311b6e', fontWeight: 'bold', fontSize: 30}}>MyID</span>
+                                        <span style={{color: '#ff0000', fontWeight: 500, fontSize: 30}}>Token</span>
                                     </div>
-                                    <span style={{color:'#424242',fontWeight:400,fontSize:25}}>+365###</span>
+                                    <span style={{color: '#424242', fontWeight: 400, fontSize: 25}}>+365###</span>
                                 </Grid>
                                 <Grid item xs={12} sm={6} md={6}>
-                                    <div style={{marginTop:20}} className={classes.footer_customer}>Customer service:</div>
+                                    <div style={{marginTop: 20}} className={classes.footer_customer}>Customer service:
+                                    </div>
                                     <div className={classes.footer_customer}>support@myidtoken.com</div>
                                 </Grid>
                             </Grid>

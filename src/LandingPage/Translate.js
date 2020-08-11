@@ -5,14 +5,15 @@ import {makeStyles} from "@material-ui/core/styles";
 const useStyles = makeStyles(theme => ({
     container:{
         borderWidth: 0, marginRight: 10, paddingTop:10,
-
+        [theme.breakpoints.down('xs')]: {
+            paddingTop:5,
+        },
     },
     item:{
         fontFamily: 'roboto',
         color: '#616161',
         fontWeight: 800,
         fontSize: 24,
-        marginLeft: 10,
         [theme.breakpoints.down('xs')]: {
             fontSize:15,
         },
@@ -30,10 +31,10 @@ function Translate(props) {
                 defaultValue={10}
             >
                 <MenuItem value={20}>
-                    <span className={classes.item}>русский</span>
+                    <span className={classes.item}>RU</span>
                 </MenuItem>
                 <MenuItem value={10}>
-                    <span className={classes.item}>English</span>
+                    <span className={classes.item}>EN</span>
                 </MenuItem>
             </Select>
         </>

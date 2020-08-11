@@ -32,7 +32,8 @@ const useStyles = makeStyles((theme) => ({
             marginTop:0,
         },
         [theme.breakpoints.down('xs')]: {
-            width:100,
+            width:130,
+            marginTop:-5
         },
     },
     menuButton: {
@@ -88,8 +89,23 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     menuItem: {
-        padding: 0, marginBottom: 10,
+        padding: 0,
     },
+    desktopLogoContainer:{
+        [theme.breakpoints.down('md')]: {
+            display: 'none',
+        },
+    },
+    mobileLogoContainer:{
+        [theme.breakpoints.down('md')]: {
+            display: 'flex',
+            alignItems:'flex-start',
+            justifyContent:'center'
+        },
+        [theme.breakpoints.up('md')]: {
+            display: 'none',
+        }
+    }
 }));
 
 export default function PrimarySearchAppBar() {
@@ -139,8 +155,16 @@ export default function PrimarySearchAppBar() {
                         </IconButton>
                     </div>
 
-                    <img src={Logo} alt="React Logo" className={classes.logo}/>
-                    <div className={classes.grow}/>
+                    <div className={classes.desktopLogoContainer}>
+                        <img src={Logo} alt="React Logo" className={classes.logo}/>
+                    </div>
+
+                    <div className={classes.grow}>
+                        <div className={classes.mobileLogoContainer}>
+                            <img src={Logo} alt="React Logo" className={classes.logo}/>
+                        </div>
+                    </div>
+
                     <div className={classes.sectionDesktop}>
                         <a href="#howitwork" style={{textDecoration: 'none'}}><Button className={classes.button}>How It
                             works?</Button></a>
