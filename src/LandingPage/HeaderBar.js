@@ -92,9 +92,12 @@ const useStyles = makeStyles((theme) => ({
         padding: 0,
     },
     desktopLogoContainer:{
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('sm')]: {
             display: 'none',
         },
+        [theme.breakpoints.up('md')]: {
+            display: 'flex',
+        }
     },
     mobileLogoContainer:{
         [theme.breakpoints.down('md')]: {

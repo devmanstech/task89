@@ -25,9 +25,13 @@ const useStyles = makeStyles((theme) => ({
     },
     body1_container: {
         paddingLeft: 70,
+        [theme.breakpoints.down('xs')]: {
+            padding: 20,
+            paddingLeft: '40px!important',
+        },
         [theme.breakpoints.down('md')]: {
             padding: 20,
-            paddingLeft: 40,
+            paddingLeft: 70,
         },
         [theme.breakpoints.up('md')]: {
             paddingBottom:50
