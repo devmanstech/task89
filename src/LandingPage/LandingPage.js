@@ -61,11 +61,11 @@ const useStyles = makeStyles((theme) => ({
         color: '#424242',
         fontFamily: 'Roboto, sans-serif;',
         fontSize: 15,
-        padding:70,
+        // padding:70,
         paddingTop:30,
         [theme.breakpoints.down('xs')]: {
             fontSize: 13,
-            padding:40
+            // padding:40
         },
 
     },
@@ -281,9 +281,23 @@ function LandingPage(props) {
                 <Grid container>
                     <Grid item sm={12} md={6} className={classes.body1_container}>
                         <Typography className={classes.body1_typo}>Shop with ease with verified identify</Typography>
-                        <Typography className={classes.body1_typo1}>
-                            Create a token dolor sit amet, based on
-                            patented technology.</Typography>
+                        {/*<Typography className={classes.body1_typo1}>Create a token dolor sit amet, based on patented technology.</Typography>*/}
+                        <Typography className={classes.body1_typo2}>
+                            Shop with ease in Internet
+
+                            MyIDToken is ipsum dolor sit amet, consectetur adipiscing elit. Nihil opus est exemplis hoc facere longius.
+
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Maximas vero virtutes iacere omnis necesse est voluptate dominante. Esse enim quam vellet iniquus iustus poterat inpune.
+
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Deinde prima illa, quae in congressu solemus: Quid tu, inquit, huc? Quod non faceret, si in voluptate summum bonum poneret. Honesta oratio, Socratica, Platonis etiam. Quae cum essent dicta, finem fecimus et ambulandi et disputandi.
+
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ita similis erit ei finis boni, atque antea fuerat, neque idem tamen; Respondent extrema primis, media utrisque, omnia omnibus. Illa sunt similia: hebes acies est cuipiam oculorum, corpore alius senescit; Eadem nunc mea adversum te oratio est. Est enim effectrix multarum et magnarum voluptatum. Haec bene dicuntur, nec ego repugno, sed inter sese ipsa pugnant.
+
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quamquam haec quidem praeposita recte et reiecta dicere licebit. Restinguet citius, si ardentem acceperit. Est enim effectrix multarum et magnarum voluptatum. Haec bene dicuntur, nec ego repugno, sed inter sese ipsa pugnant. Non minor, inquit, voluptas percipitur ex vilissimis rebus quam ex pretiosissimis.
+
+                            Non minor, inquit, voluptas percipitur ex vilissimis rebus quam ex pretiosissimis!
+                        </Typography>
 
 
                         <Button className={classes.signButton} variant={"contained"}>SIGN UP NOW</Button>
@@ -291,22 +305,6 @@ function LandingPage(props) {
                     <Grid item sm={12} md={6} className={classes.body1_img_container}>
                         <img src={body_1_img} alt="Body 1 image" style={{width: 'inherit'}}/>
                     </Grid>
-                    <Typography className={classes.body1_typo2}>
-                        Shop with ease in Internet
-
-                        MyIDToken is ipsum dolor sit amet, consectetur adipiscing elit. Nihil opus est exemplis hoc facere longius.
-
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Maximas vero virtutes iacere omnis necesse est voluptate dominante. Esse enim quam vellet iniquus iustus poterat inpune.
-
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Deinde prima illa, quae in congressu solemus: Quid tu, inquit, huc? Quod non faceret, si in voluptate summum bonum poneret. Honesta oratio, Socratica, Platonis etiam. Quae cum essent dicta, finem fecimus et ambulandi et disputandi.
-
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ita similis erit ei finis boni, atque antea fuerat, neque idem tamen; Respondent extrema primis, media utrisque, omnia omnibus. Illa sunt similia: hebes acies est cuipiam oculorum, corpore alius senescit; Eadem nunc mea adversum te oratio est. Est enim effectrix multarum et magnarum voluptatum. Haec bene dicuntur, nec ego repugno, sed inter sese ipsa pugnant.
-
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quamquam haec quidem praeposita recte et reiecta dicere licebit. Restinguet citius, si ardentem acceperit. Est enim effectrix multarum et magnarum voluptatum. Haec bene dicuntur, nec ego repugno, sed inter sese ipsa pugnant. Non minor, inquit, voluptas percipitur ex vilissimis rebus quam ex pretiosissimis.
-
-                        Non minor, inquit, voluptas percipitur ex vilissimis rebus quam ex pretiosissimis!
-                    </Typography>
 
                 </Grid>
 
