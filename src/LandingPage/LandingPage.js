@@ -28,9 +28,10 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]: {
             padding: 20,
             paddingLeft: '40px!important',
+            paddingRight:'40px!important'
         },
         [theme.breakpoints.down('md')]: {
-            padding: 20,
+            paddingRight: 70,
             paddingLeft: 70,
         },
         [theme.breakpoints.up('md')]: {
@@ -40,55 +41,62 @@ const useStyles = makeStyles((theme) => ({
     body1_typo: {
         color: '#EB5757',
         fontFamily: 'roboto slab',
-        fontSize: 76,
+        fontSize: 66,
+        maxWidth:570,
         paddingTop: 10,
+        paddingLeft:70,
+        paddingRight:70,
         [theme.breakpoints.down('xs')]: {
             fontSize: 48,
+            paddingLeft:40,
+            paddingRight:40,
         },
-    },
-    body1_typo1: {
-        color: '#424242',
-        fontFamily: 'Roboto, sans-serif;',
-        fontSize: 24,
-        marginBottom:30,
-        paddingTop: 10,
-        [theme.breakpoints.down('xs')]: {
-            fontSize: 18,
-        },
-
     },
     body1_typo2: {
         color: '#424242',
         fontFamily: 'Roboto, sans-serif;',
-        fontSize: 15,
-        // padding:70,
+        fontSize: 24,
+        padding:70,
         paddingTop:30,
         [theme.breakpoints.down('xs')]: {
             fontSize: 13,
-            // padding:40
+            padding:40
         },
 
     },
     body1_img_container: {
-        paddingTop: 50,
-        width: '100%',
+        maxWidth:550,
+        margin:30,
+        marginBottom:60,
+        float:'right',
         [theme.breakpoints.up('md')]: {
-            padding: '100px!important',
         },
         [theme.breakpoints.up('sm')]: {
-            padding: 70,
         },
         [theme.breakpoints.down('xs')]: {
-            padding: 40
+            width:'calc(100% - 40px)',
+            // maxWidth:400,
+            // paddingLeft:30,
         },
     },
-    signButton: {
+    body1_signButton: {
         background: '#ffbc6d',
         color: 'white',
-        marginRight: 10,
         fontSize: 24,
         fontWeight: 'bold',
-        marginTop: 30,
+        marginBottom: 100,
+        marginLeft:70,
+        [theme.breakpoints.down('xs')]: {
+            fontSize: 17,
+            marginLeft:40,
+        },
+    },
+    body2_signButton: {
+        background: '#ffbc6d',
+        color: 'white',
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginTop: 20,
         marginBottom: 20,
         [theme.breakpoints.down('xs')]: {
             fontSize: 17,
@@ -110,10 +118,10 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: 70,
         backgroundColor: '#2F7686',
         // height: 1150,
+        paddingRight: 40,
         paddingBottom: 280,
         [theme.breakpoints.down('xs')]: {
             paddingLeft: 40,
-            paddingRight: 20,
             paddingBottom: 180,
             // height: 1400,
         },
@@ -164,9 +172,11 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: "center",
         alignItems: 'center',
-        margin: 30,
+        marginLeft: -30,
+        position: 'initial',
         [theme.breakpoints.down('xs')]: {
             margin: 10,
+            paddingRight:10,
         },
     },
     body3_container: {
@@ -278,35 +288,29 @@ function LandingPage(props) {
             <div className={classes.container}>
                 <HeaderBar/>
                 {/*body1*/}
-                <Grid container>
-                    <Grid item sm={12} md={6} className={classes.body1_container}>
-                        <Typography className={classes.body1_typo}>Shop with ease with verified identify</Typography>
-                        {/*<Typography className={classes.body1_typo1}>Create a token dolor sit amet, based on patented technology.</Typography>*/}
-                        <Typography className={classes.body1_typo2}>
-                            Shop with ease in Internet
+                <div>
+                    <Typography className={classes.body1_typo}>Shop with ease with verified identify</Typography>
+                    <Typography className={classes.body1_typo2}>
+                        <img src={body_1_img} alt="Body 1 image" className={classes.body1_img_container}/>
+                        Shop with ease in Internet
 
-                            MyIDToken is ipsum dolor sit amet, consectetur adipiscing elit. Nihil opus est exemplis hoc facere longius.
+                        MyIDToken is ipsum dolor sit amet, consectetur adipiscing elit. Nihil opus est exemplis hoc facere longius.
 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Maximas vero virtutes iacere omnis necesse est voluptate dominante. Esse enim quam vellet iniquus iustus poterat inpune.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Maximas vero virtutes iacere omnis necesse est voluptate dominante. Esse enim quam vellet iniquus iustus poterat inpune.
 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Deinde prima illa, quae in congressu solemus: Quid tu, inquit, huc? Quod non faceret, si in voluptate summum bonum poneret. Honesta oratio, Socratica, Platonis etiam. Quae cum essent dicta, finem fecimus et ambulandi et disputandi.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Deinde prima illa, quae in congressu solemus: Quid tu, inquit, huc? Quod non faceret, si in voluptate summum bonum poneret. Honesta oratio, Socratica, Platonis etiam. Quae cum essent dicta, finem fecimus et ambulandi et disputandi.
 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ita similis erit ei finis boni, atque antea fuerat, neque idem tamen; Respondent extrema primis, media utrisque, omnia omnibus. Illa sunt similia: hebes acies est cuipiam oculorum, corpore alius senescit; Eadem nunc mea adversum te oratio est. Est enim effectrix multarum et magnarum voluptatum. Haec bene dicuntur, nec ego repugno, sed inter sese ipsa pugnant.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ita similis erit ei finis boni, atque antea fuerat, neque idem tamen; Respondent extrema primis, media utrisque, omnia omnibus. Illa sunt similia: hebes acies est cuipiam oculorum, corpore alius senescit; Eadem nunc mea adversum te oratio est. Est enim effectrix multarum et magnarum voluptatum. Haec bene dicuntur, nec ego repugno, sed inter sese ipsa pugnant.
 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quamquam haec quidem praeposita recte et reiecta dicere licebit. Restinguet citius, si ardentem acceperit. Est enim effectrix multarum et magnarum voluptatum. Haec bene dicuntur, nec ego repugno, sed inter sese ipsa pugnant. Non minor, inquit, voluptas percipitur ex vilissimis rebus quam ex pretiosissimis.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quamquam haec quidem praeposita recte et reiecta dicere licebit. Restinguet citius, si ardentem acceperit. Est enim effectrix multarum et magnarum voluptatum. Haec bene dicuntur, nec ego repugno, sed inter sese ipsa pugnant. Non minor, inquit, voluptas percipitur ex vilissimis rebus quam ex pretiosissimis.
 
-                            Non minor, inquit, voluptas percipitur ex vilissimis rebus quam ex pretiosissimis!
-                        </Typography>
+                        Non minor, inquit, voluptas percipitur ex vilissimis rebus quam ex pretiosissimis!
+                    </Typography>
+                    <Button className={classes.body1_signButton} variant={"contained"}>SIGN UP NOW</Button>
 
+                </div>
 
-                        <Button className={classes.signButton} variant={"contained"}>SIGN UP NOW</Button>
-                    </Grid>
-                    <Grid item sm={12} md={6} className={classes.body1_img_container}>
-                        <img src={body_1_img} alt="Body 1 image" style={{width: 'inherit'}}/>
-                    </Grid>
-
-                </Grid>
 
                 {/*body2*/}
                 <div id="howitwork" style={{position: 'relative'}}>
@@ -338,8 +342,8 @@ function LandingPage(props) {
                             url="https://www.youtube.com/watch?v=ug50zmP9I7s"
                         />
                     </div>
-                    <div className={classes.center} style={{marginLeft: -10}}>
-                        <Button variant={"contained"} className={classes.signButton}>SIGN UP NOW</Button></div>
+                    <div className={classes.center}>
+                        <Button variant={"contained"} className={classes.body2_signButton}>SIGN UP NOW</Button></div>
                     <Typography className={classes.body2_title_content} variant={"h5"}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed residamus, inquit, si
                         placet.
