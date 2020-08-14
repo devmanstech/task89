@@ -55,11 +55,11 @@ const useStyles = makeStyles((theme) => ({
     body1_typo2: {
         color: '#424242',
         fontFamily: 'Roboto, sans-serif;',
-        fontSize: 24,
+        fontSize: 20,
         padding:70,
         paddingTop:30,
         [theme.breakpoints.down('xs')]: {
-            fontSize: 13,
+            fontSize: 16,
             padding:40
         },
 
@@ -116,18 +116,16 @@ const useStyles = makeStyles((theme) => ({
     body2_sub_container: {
         left: 0,
         paddingLeft: 70,
+        paddingRight: 70,
         backgroundColor: '#2F7686',
-        // height: 1150,
-        paddingRight: 40,
         paddingBottom: 280,
         [theme.breakpoints.down('xs')]: {
             paddingLeft: 40,
+            paddingRight: 40,
             paddingBottom: 180,
-            // height: 1400,
         },
         [theme.breakpoints.up('md')]: {
             marginBottom: -180,
-            // paddingBottom: 180
         },
         [theme.breakpoints.down('sm')]: {
             marginBottom: -80,
@@ -149,11 +147,10 @@ const useStyles = makeStyles((theme) => ({
         lineHeight: 1.2,
         fontSize: 20,
         [theme.breakpoints.down('xs')]: {
-            fontSize: 20,
+            fontSize: 16,
             paddingTop: 100
         },
         [theme.breakpoints.down('md')]: {
-            fontSize: 20,
             paddingTop: 100
         },
         [theme.breakpoints.up('lg')]: {

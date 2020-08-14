@@ -16,10 +16,11 @@ const useStyles = makeStyles((theme) => ({
         background: '#F2F2F2',
         boxShadow: '0px 0px',
         paddingLeft: 40,
-        paddingRight: 20,
+        paddingRight: 40,
         [theme.breakpoints.down('md')]: {
             padding: 0,
-            paddingLeft: 20,
+            paddingLeft: 7,
+            paddingRight: 20,
         },
     },
     grow: {
@@ -35,9 +36,6 @@ const useStyles = makeStyles((theme) => ({
             width:130,
             marginTop:-5
         },
-    },
-    menuButton: {
-        marginRight: theme.spacing(2),
     },
     button: {
         textTransform: "none",
