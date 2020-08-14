@@ -42,10 +42,10 @@ const useStyles = makeStyles((theme) => ({
         color: '#EB5757',
         fontFamily: 'roboto slab',
         fontSize: 66,
-        maxWidth:570,
         paddingTop: 10,
         paddingLeft:70,
         paddingRight:70,
+        marginBottom:50,
         [theme.breakpoints.down('xs')]: {
             fontSize: 48,
             paddingLeft:40,
@@ -70,8 +70,13 @@ const useStyles = makeStyles((theme) => ({
         marginBottom:60,
         float:'right',
         [theme.breakpoints.up('md')]: {
+            width:'calc(100% - 40px)!important',
+            float:'right!important',
         },
         [theme.breakpoints.up('sm')]: {
+            // width:'calc(100% - 40px)',
+            float:'none',
+            width:'100%',
         },
         [theme.breakpoints.down('xs')]: {
             width:'calc(100% - 40px)',
@@ -260,7 +265,10 @@ const useStyles = makeStyles((theme) => ({
         margin: 20
     },
     footer_customer: {
-        color: '#424242', fontWeight: 400, fontSize: 24,
+        color: '#424242',
+        fontWeight: 400,
+        fontSize: 24,
+        marginRight:20,
         [theme.breakpoints.down('xs')]: {
             fontSize: '14px!important',
         },
@@ -288,7 +296,7 @@ function LandingPage(props) {
                 <div>
                     <Typography className={classes.body1_typo}>Shop with ease with verified identify</Typography>
                     <Typography className={classes.body1_typo2}>
-                        <img src={body_1_img} alt="Body 1 image" className={classes.body1_img_container}/>
+                        <img src={body_1_img} alt="Body 1 image" className={classes.body1_img_container}/><br />
                         Shop with ease in Internet
 
                         MyIDToken is ipsum dolor sit amet, consectetur adipiscing elit. Nihil opus est exemplis hoc facere longius.
@@ -427,19 +435,19 @@ function LandingPage(props) {
                 {/*footer*/}
                 <div className={classes.footerContainer}>
                     <Grid container>
-                        <Grid item xs={6} sm={4} md={6}>
+                        <Grid item xs={6} sm={4} md={5} lg={6}>
                             <img src={FooterLogo} alt="" width={150} className={classes.footerLogo}/>
                         </Grid>
-                        <Grid item xs={6} sm={8} md={6}>
+                        <Grid item xs={6} sm={8} md={7} lg={6}>
                             <Grid container>
-                                <Grid item xs={12} sm={6} md={6}>
+                                <Grid item xs={12} sm={5} md={6}>
                                     <div style={{marginTop: 20, fontFamily: 'roboto'}}>
                                         <span style={{color: '#311b6e', fontWeight: 'bold', fontSize: 30}}>MyID</span>
                                         <span style={{color: '#ff0000', fontWeight: 500, fontSize: 30}}>Token</span>
                                     </div>
                                     <span style={{color: '#424242', fontWeight: 400, fontSize: 25}}>+365###</span>
                                 </Grid>
-                                <Grid item xs={12} sm={6} md={6}>
+                                <Grid item xs={12} sm={7} md={6}>
                                     <div style={{marginTop: 20}} className={classes.footer_customer}>Customer service:
                                     </div>
                                     <div className={classes.footer_customer}>support@myidtoken.com</div>
