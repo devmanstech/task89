@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import LandingPage from "./LandingPage";
 import {createMuiTheme,ThemeProvider} from "@material-ui/core/styles";

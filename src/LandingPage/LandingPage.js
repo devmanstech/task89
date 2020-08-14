@@ -74,14 +74,11 @@ const useStyles = makeStyles((theme) => ({
             float:'right!important',
         },
         [theme.breakpoints.up('sm')]: {
-            // width:'calc(100% - 40px)',
             float:'none',
             width:'100%',
         },
         [theme.breakpoints.down('xs')]: {
             width:'calc(100% - 40px)',
-            // maxWidth:400,
-            // paddingLeft:30,
         },
     },
     body1_signButton: {
@@ -186,8 +183,6 @@ const useStyles = makeStyles((theme) => ({
         backgroundRepeat: 'no-repeat',
         height: 120,
         paddingLeft: 70,
-        // marginTop: -150,
-        // marginTop: -150,
         [theme.breakpoints.down('xs')]: {
             marginTop: '-60px!important',
             paddingLeft: 40
